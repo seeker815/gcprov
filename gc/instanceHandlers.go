@@ -46,3 +46,19 @@ func getInstance(project string, zone string, instance string) uint64 {
 
 	return resp.Id
 }
+
+// CreateInstance provisisons new instance in GCP
+func CreateInstance(writer http.ResponseWriter, request *http.Request) {
+	InitHeaders(writer)
+	log.Print("Instance create/provsion requested!")
+
+	params := mux.Vars(request)
+	log.Print(fmt.Printf("POST params are %#v", params))
+	if len(params) != 0 {
+		instanceID := provisionInstance(params["project"], params["zone"], params["username"], params["userpass"])
+		json.NewEncoder(writer).Encode(fmt.Sprintf("Instance provisioned and instance ID is %#v", instanceID))
+	} else {
+		log.Fatal("Failed to provision new instance!")
+	}
+
+}
