@@ -62,3 +62,17 @@ func CreateInstance(writer http.ResponseWriter, request *http.Request) {
 	}
 
 }
+
+func provisionInstance(project string, zone string, username string, userpass string) uint64 {
+	// customize the attributes based on the instance to be provisioned
+	var diskSize int64
+	region := "us-west1"
+	instance := "demo-stack"
+	instanceType := "g1-small"
+	diskType := "pd-standard"
+	image := "projects/ubuntu-os-cloud/global/images/ubuntu-1604-xenial-v20200611"
+	diskSize = 10
+	accEmail := "gcp service account"
+	enAutoRestart := true
+
+}
