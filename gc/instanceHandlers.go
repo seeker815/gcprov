@@ -55,7 +55,7 @@ func CreateInstance(writer http.ResponseWriter, request *http.Request) {
 	params := mux.Vars(request)
 	log.Print(fmt.Printf("POST params are %#v", params))
 	if len(params) != 0 {
-		instanceID := provisionInstance(params["project"], params["zone"], params["username"], params["userpass"])
+		instanceID := provisionInstance(params["project"], params["region"], params["zone"], params["username"], params["userpass"])
 		json.NewEncoder(writer).Encode(fmt.Sprintf("Instance provisioned and instance ID is %#v", instanceID))
 	} else {
 		log.Fatal("Failed to provision new instance!")
@@ -63,10 +63,9 @@ func CreateInstance(writer http.ResponseWriter, request *http.Request) {
 
 }
 
-func provisionInstance(project string, zone string, username string, userpass string) uint64 {
+func provisionInstance(project string, region string, zone string, username string, userpass string) uint64 {
 	// customize the attributes based on the instance to be provisioned
 	var diskSize int64
-	region := "us-west1"
 	instance := "demo-stack"
 	instanceType := "g1-small"
 	diskType := "pd-standard"

@@ -12,6 +12,7 @@ func Router() *mux.Router {
 	router.HandleFunc("/healthcheck", GetHealthCheck).Methods("GET")
 	router.HandleFunc(prefix+"/create", CreateInstance).Queries(
 		"project", "{project}",
+		"region", "{region}",
 		"zone", "{zone}",
 		"username", "{username}",
 		"userpass", "{userpass}",
