@@ -66,10 +66,9 @@ To customize the instance name, image and disk size or the network interfaces an
 ```go
 gc
 
--routes.go                  routes definitions
--healthCheckHandlers.go     Healtcheck handlers
--instanceHandlers.go        instance prov and status
+-routes.go                  //routes definitions
+-healthCheckHandlers.go     //Healtcheck handlers
+-instanceHandlers.go        //instance prov and status
 
-main.go                     entrypoint for the app
+main.go                     //entrypoint for the app
 ```
-
