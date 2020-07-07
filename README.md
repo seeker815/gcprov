@@ -5,11 +5,14 @@
 Implements a small service that can be used to spawn cloud instances on Google Cloud(GCE) using Compute API.
 Service also configures​ ​instance(boostraps)​ ​with​ ​a​ user ​given​ ​username/password​ ​and​ ​responds​ ​with​ ​the​ ​newly created​ ​instance’s​ ID.
 
+As a devops guy, I end up using Terraform/Ansible for Provisioning but this is an exercise to peek behind and explore/provision instance using the Google Compute API. Google compute API while has good documentation doesn't have a lot of example code so this would help if you plan on using the Compute API.
+
 ## Routes
 
 gcProv ​service​ ​ ​accepts​ ​HTTP​ ​requests​ ​with​ ​the​ ​following​ ​endpoints:
 
 ● GET​ ​/healthcheck
+
 ● POST​ ​/v1/instances/create
 
 ### GET​ ​/healthcheck
