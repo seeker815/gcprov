@@ -11,9 +11,9 @@ As a devops guy, I end up using Terraform/Ansible for Provisioning but this is a
 
 gcProv ​service​ ​ ​accepts​ ​HTTP​ ​requests​ ​with​ ​the​ ​following​ ​endpoints:
 
-● GET​ ​/healthcheck
+- GET​ ​/healthcheck
 
-● POST​ ​/v1/instances/create
+- POST​ ​/v1/instances/create
 
 ### GET​ ​/healthcheck
 
