@@ -11,5 +11,5 @@ import (
 func main() {
 	fmt.Println("gcProv service handles instance healtcheck, allows to provision instances on Google Cloud")
 	router := gc.Router()
-	log.Fatal(http.ListenAndServe(":8000", router)
+	log.Fatal(http.ListenAndServe(":8000", router))
 }
