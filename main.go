@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/seeker815/gcprovision/gc"
+	"github.com/seeker815/gcprov/gc"
 )
 
 func main() {
